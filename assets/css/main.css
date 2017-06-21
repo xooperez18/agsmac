@@ -55,6 +55,61 @@
 		text-align: center;
 	}
 
+	@media screen and (max-width: 1680px) {
+		.circle {
+			width: 115px;
+			height: 115px;
+		}
+		.round span:hover {
+			opacity: .85;
+			font-size: 18px !important;			
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		.circle {
+			width: 90px;
+			height: 90px;
+		}
+		.round span:hover {
+			opacity: .85;
+			font-size: 14px !important;			
+		}
+	}
+
+	@media screen and (max-width: 1010px) {
+		.circle {
+			width: 60px;
+			height: 60px;
+		}
+		.round span:hover {
+			opacity: .85;
+			font-size: 12px  !important;			
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.circle {
+			width: 50px;
+			height: 50px;
+		}
+		.round span:hover {
+			opacity: .85;
+			font-size: 9px  !important;			
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.circle {
+			width: 50px;
+			height: 50px;
+		}
+		.round span:hover {
+			opacity: .85;
+			font-size: 8px  !important;			
+		}
+	}
+	
 	@-moz-keyframes rotate {
 		0% {transform: rotate(0deg);}
 		100% {transform: rotate(-360deg);}
@@ -179,7 +234,10 @@ a.green {
 	body {
 		line-height: 1;
 	}
-
+	
+	p {
+		font-size: 18px;
+	}
 	ol, ul {
 		list-style: none;
 	}
@@ -393,7 +451,7 @@ a.green {
 		margin: 2em 0;
 	}
 
-		hr.major {
+	hr.major {
 			margin: 3em 0;
 		}
 
@@ -407,6 +465,7 @@ a.green {
 
 	.align-right {
 		text-align: right;
+
 	}
 
 	input, select, textarea {
@@ -857,19 +916,28 @@ a.green {
 			top: 0.25em;
 		}
 
+		.image.left > div{
+			float: left;
+		}
+
 		.image.right {
 			float: right;
 			margin: 0 0 1em 1.5em;
 			top: 0.25em;
 		}
 
-		.image.fit {
-			display: block;
-			margin: 0 0 2em 0;
-			width: 100%;
+		.image.right > div {
+			float: right;
 		}
 
-			.image.fit img {
+		.image.fit {
+			display: inline;
+			margin: 0 0 2em 0;
+			width: 50%;
+			clear: both;
+		}
+
+		.image.fit img {
 				width: 100%;
 			}
 
@@ -1070,6 +1138,7 @@ a.green {
 		-moz-column-gap: 1em;
 		-webkit-column-gap: 1em;
 		column-gap: 1em;
+		clear : both;
 	}
 
 		.columns .image {
