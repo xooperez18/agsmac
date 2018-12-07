@@ -61,6 +61,26 @@
 
 			});
 
+//Efecto imágenes laterales
+$('.mostrarInfoH').each( function() {
+				var t 		= jQuery(this);
+					var enlace 	= t.find('.mostrarMas');
+
+				enlace.click(function(e) {
+
+					t.toggleClass('hide');
+					t.toggleClass('show');
+
+					/*if ( t.hasClass('preview') ) {
+						return true;
+					} else {
+						e.preventDefault();
+					}*/
+
+				});
+
+			});
+
 		// Footer.
 			$footer.each( function() {
 
