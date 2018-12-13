@@ -201,8 +201,8 @@
 					font-weight: normal;
 					text-transform: none !important;
 				}
-	.mostrarInfoH.hide .mostrarMas.hidden:before, .mostrarInfoH.preview .mostrarMas.hidden:before {
 
+				.mostrarInfoH.hide .mostrarMas.hidden:before, .mostrarInfoH.preview .mostrarMas.hidden:before {
 					transition: 0.2s;
 					content: url(../../images/fl.png);
 					color: #FFF;
@@ -214,9 +214,44 @@
 					display: none;
 				}
 
-				.castores {
+				.CC {
 					background: #c0a062;
 					box-shadow: 0 0 0 1em #996633;
+				}
+
+				.MG {
+					background: #fff500;
+					box-shadow: 0 0 0 1em #ff0000;
+				}
+
+				.ML {
+					background: #fff500;
+					box-shadow: 0 0 0 1em #28166f;
+				}
+
+				.TMS {
+					background: #244d40;
+					box-shadow: 0 0 0 1em #2f2a27;
+				}
+
+				.TS {
+					background: #244d40;
+					box-shadow: 0 0 0 1em #2f2a27;
+				}
+
+				.CP {
+					background: #ffffff;
+					box-shadow: 0 0 0 1em #1f1a17;
+				}
+
+				.CR {
+					background: #ffffff;
+					box-shadow: 0 0 0 1em #1f1a17;
+				}
+
+				.SD {
+					background: #000000;
+					box-shadow: 0 0 0 1em #ffffff;
 				}
 
 				.btnCastores {
