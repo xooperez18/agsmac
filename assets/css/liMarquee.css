@@ -102,8 +102,8 @@
     -ms-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
     border-radius: 100%;
-    width: 35em;
-    height: 35em;
+    width: 40vw;
+    height: 40vw;
     padding: 4em;
     text-align: center;
     cursor: default;
@@ -141,6 +141,23 @@
     display: block !important;
 }
 
+.show .interno img{
+    position: absolute;
+    top: 50%;
+}
+
+.show .interno img:nth-of-type(1){
+    left: 0px;
+    width: 30px;
+    height: 20px;
+}
+
+.show .interno img:nth-of-type(2){
+    right: 0px;
+    width: 30px;
+    height: 20px;
+}
+
 .mostrarInfoH .show {
     transition: 2s;
     left: 35% !important;
@@ -155,7 +172,7 @@
 
 .show .content {
     transition: 2s;
-    left: calc(50vw - 240px)!important; 
+    left: 30vw !important;
 }
 
 .mostrarInfoH .hidden, .mostrarInfoH.preview {
@@ -267,4 +284,104 @@
     background: #996633;
     color: white;
     font-size: 1.2em;
+}
+
+/*Estilo para las tabs*/
+.tab{
+    padding-top: 5vw;
+    border: none;
+    align-items: center;
+}
+
+.tab>button{
+    width: 33%;
+}
+
+
+.tab > button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab.cafe>button, .tab.negro>button{
+    background-color: #FFFFFF;
+}
+.tab.verdeOscuro>button{
+    background-color: #B8DB7C;
+}
+.tab.blanco>button{
+    background-color: #DA251D;
+}
+
+.tab.gacelas>button{
+    background-color: #EF473F;
+    color: #ffffff;
+}
+.tab.lobatos>button{
+    background-color: #28166F;
+    color: #ffffff;
+}
+
+.tab>button:hover {
+    filter: brightness(85%);
+}
+
+.tab>button.active {
+    filter: brightness(65%);
+}
+
+.tabcontent {
+    display: none;
+    padding: 100px 12px;
+    border-top: none;
+}
+
+.tabcontent-small{
+    display: none;
+    padding: 80px 12px;
+    border-top: none;
+}
+
+#PromesaCC, #OraciónCC, #LeyNormasCC,
+#PromesaTMS, #OraciónTMS, #LeyNormasTMS,
+#PromesaSD, #OraciónSD, #LeyNormasSD{
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.contenidoLargoCirculos {
+    width: 30vw;
+    height: 23vw;
+    display: none;
+    margin: 4vw 2vw;
+    overflow-y: scroll;
+}
+
+.contenidoLargoCirculos>p,
+.contenidoLargoCirculos>ul{
+    font-size: 16px;
+    text-align: justify;
+}
+
+p.cafe, p.negro, p.verde{
+    color:#ffffff;
+}
+
+p.gacelas, p.lobatos, p.blanco{
+    color:#000000;
+}
+
+ul.blanca{
+    list-style: none;
+    color: #ffffff;
+}
+
+ul.negra{
+    list-style: none;
+    color: #000000;
 }
