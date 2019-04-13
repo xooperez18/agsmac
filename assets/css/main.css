@@ -10,6 +10,10 @@
     src: local("?"), url("../fonts/antique-olive-lt-nord-italic.woff") format("woff"), url("../fonts/antique-olive-lt-nord-italic.ttf") format("truetype");
 }
 
+.detalles {
+	cursor: pointer;
+}
+
 .stretch {
     display:inline-block;
     -webkit-transform:scale(0.7,1); /* Safari and Chrome */
