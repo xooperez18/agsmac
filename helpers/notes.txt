@@ -1,0 +1,25 @@
+Super arreglar secciones
+
+- Cuadritos.
+OK Galeria
+OK Embeber video
+- Quienes somos 
+	Constitucion
+	Seguro
+
+
+Grupos! Panoletas
+Marco Simbolico
+- Bandera (Quienes somos, Constitucion)
+- Libro de oro (Fotos, galeria)
+- Biblioteca (Literatura, y fichas) 
+- Cuadro de adelanto
+- Ruta Critica (Mostrar adelantos)
+- Tagbox  (Twiter, Facebook)
+
+- Calendario de actividades
+
+- Seguro
+- Cumpleanos
+
+Bugs: Que pex con las panoletas, derepente se cortan
