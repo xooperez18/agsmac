@@ -127,27 +127,46 @@
 		<!-- Grupos -->
 		<div class="wrapper">
 			<div class="str3 str_wrap">
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="1">
 					<img src="images/grupos/3.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="2">
 					<img src="images/grupos/5.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="3">
 					<img src="images/grupos/50.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="4">
 					<img src="images/grupos/54.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="5">
 					<img src="images/grupos/136.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="6">
 					<img src="images/grupos/488.png">
 				</a>
-				<a href="#">
+				<a class = "panioleta" href="#popup1" data="7">
 					<img src="images/grupos/729.png">
 				</a>
+			</div>
+		</div>
+
+		<div id="panioletaSearcher" class="hide">
+			<div class="inner">
+				<div class="content" style="margin-bottom: 5%;">
+					<div style="flex-grow: 1; float: left; width: 50%;">
+						<select id="grupos"></select>
+						<select id="subgrupos"></select>
+					</div>
+					<div style="flex-grow: 1; float: right; 
+						width: 50%; height: 100%; background-color: #EEA226;
+						color: #000000; font-weight: bold; padding: 2% 5%;">
+						<div id="contenidoBanderin"></div>
+					</div>
+					
+				</div>
+				<a href="#" class="button big btn2 btn-cerrar" style="text-transform: capitalize; font-weight: 500;">Cerrar</a>	
+				<a href="#" class="button hidden"></a>
 			</div>
 		</div>
 
@@ -277,16 +296,6 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/jquery.liMarquee.js"></script>
 	<script>
-		$(window).load(function () {
-			$('.str3').liMarquee({
-				direction: 'left',
-				loop: -1,
-				scrolldelay: 0,
-				scrollamount: 100,
-				circular: true,
-				drag: true
-			});
-		});
 		function openInfo(evt, section) {
 			var i, tabcontent, tablinks;
 			tabcontent = document.getElementsByClassName("tabcontent");

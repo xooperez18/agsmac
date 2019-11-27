@@ -13,7 +13,7 @@ function includeHTML(elmnt) {
 			success: function ( html ) {
 				console.log("Se carga componente");
 				elmnt.innerHTML = html;
-			}, 
+			},
 			error: function () {
 				// TODO: Configuraciones de componente de muestra de error
 			}
@@ -213,7 +213,92 @@ function afterAfterInclude(){
 			width:'30px'
 		}, 100);
 	});
-
+	$('.str3').liMarquee({
+		direction: 'left',
+		loop: -1,
+		scrolldelay: 0,
+		scrollamount: 100,
+		circular: true,
+		drag: true,
+		touchEvent: true
+	});
+	// declaramos el funcionamiento gral. del boton para esconder el dialog
+	$("#panioletaSearcher").find(".button").click( function(e){
+		e.preventDefault();
+		$("#panioletaSearcher").toggleClass('hide');
+	} )
+	$("a.panioleta").click(function(event){
+		var data = $(this).attr("data");
+		if( grupos == null ){
+			var gruposRequest = $.get('includes/data/grupos.json', function(dataPanioletas){
+				grupos = dataPanioletas;
+				if ( grupos != null){
+					// Limpiamos el selector.
+					$("#grupos").empty();
+					$("#subgrupos").empty();
+					$.each(grupos, function(key, value){
+						if( data == key ){
+							$("#grupos").append("<option value='"+key+"' selected>"+key+"</option>");
+							$("#subgrupos").append("<option value='' selected>-----</option>");
+							$.each( value, function( i,v ){
+								$("#subgrupos").append("<option value='"+i+"' subdata='"+v+"'>"+i+"</option>");
+							} );
+						} else {
+							$("#grupos").append("<option value='"+key+"'>"+key+"</option>");
+						}
+					});	
+				}
+				$("#panioletaSearcher").toggleClass('hide');
+			}).fail( function(){
+				grupos = null;
+			});
+		} else {
+			$("#grupos").empty();
+			$("#subgrupos").empty();
+			$.each(grupos, function(key, value){
+				if( data == key ){
+					$("#grupos").append("<option value='"+key+"' selected>"+key+"</option>");
+					$("#subgrupos").append("<option value='' selected>-----</option>");
+					$.each( value, function( i,v ){
+						$("#subgrupos").append("<option value='"+i+"' subdata='"+v+"'>"+i+"</option>");
+					} );
+				} else {
+					$("#grupos").append("<option value='"+key+"'>"+key+"</option>");
+				}
+			});
+			$("#panioletaSearcher").toggleClass('hide');
+		}
+	});
+	$("#subgrupos").on('change', function(event){
+		var info = $('option:selected', this).attr('subdata');
+		$("#contenidoBanderin").html(info);
+	});
+	$( "#grupos" ).on('change', function(event){
+		var data = $("#grupos").children("option:selected").val();
+		if( grupos == null ){
+			var gruposRequest = $.get('includes/data/grupos.json', function(dataPanioletas){
+				grupos = dataPanioletas;
+			}).fail( function(){
+				grupos = null;
+			});
+		} 
+		if ( grupos != null){
+			// Limpiamos el selector.
+			$("#grupos").empty();
+			$("#subgrupos").empty();
+			$.each(grupos, function(key, value){
+				if( data == key ){
+					$("#grupos").append("<option value='"+key+"' selected>"+key+"</option>");
+					$("#subgrupos").append("<option value='' selected>-----</option>");
+					$.each( value, function( i,v ){
+						$("#subgrupos").append("<option value='"+i+"' subdata='"+v+"'>"+i+"</option>");
+					} );
+				} else {
+					$("#grupos").append("<option value='"+key+"'>"+key+"</option>");
+				}
+			});
+		}	
+	});
 	$("a.detalles").click(function(e){
 		e.preventDefault();
 		if( !$('.mostrarInfoH').hasClass('show') ){
@@ -221,12 +306,14 @@ function afterAfterInclude(){
 			// por lo que podemos abrir la nueva pagina.
 			var pagina = $(this).attr("data");
 			localStorage.setItem("page", pagina);
-			window.location.href = "detail1.html";
 		}
 	});
-}
 
+}
+/* Declararemos un variable global para las panioletas*/
+var grupos = null;
 $(document).ready( function () {
 	/*Llamaremos a la función que hace la insercion de todos los html*/
 	getAllIncludedHtml();
+	
 });
